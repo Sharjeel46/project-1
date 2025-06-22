@@ -5,15 +5,11 @@ format: html
 
 execute:
     echo: false
-   message: false
-   warning: false
  ---
 
 
 
-```
 
-```
 
 
 
