@@ -1,0 +1,65 @@
+---
+title: "Quarto-1"
+
+format: html
+
+execute:
+    echo: false
+   message: false
+   warning: false
+ ---
+
+
+
+```
+
+```
+
+
+
+```{r}
+ suppressPackageStartupMessages(library(tidyverse))
+   library(palmerpenguins)
+
+
+
+
+
+`
+```
+
+`
+```{r}
+# Load required libraries
+library(tidyverse)
+library(palmerpenguins)
+
+# Remove rows with missing values
+penguins_clean <- penguins %>% 
+  drop_na(bill_length_mm, bill_depth_mm, species)
+
+# Create scatter plot of bill length vs bill depth, colored by species
+ggplot(penguins_clean, aes(x = bill_length_mm, y = bill_depth_mm, 
+                           color = species, shape = species)) +
+  geom_point(size = 3, alpha = 0.8) +
+  scale_color_brewer(palette = "Dark2") +
+  labs(
+    title = "Penguin Bill Dimensions by Species",
+    subtitle = "Bill Length vs. Bill Depth (in mm)",
+    x = "Bill Length (mm)",
+    y = "Bill Depth (mm)",
+    caption = "Data: palmerpenguins"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(face = "bold"),
+    legend.position = "right",
+    panel.grid.major = element_line(color = "gray90")
+  )
+```
+
+```
+
+
+
+```
